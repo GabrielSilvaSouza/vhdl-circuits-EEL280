@@ -1,0 +1,41 @@
+-- Project : The "Bin" Comparison --- The "bin" doesn't mean garbage
+-- File    :
+-- Autor   : Gabriel 
+-- Date    : 28/07/2021
+--
+--------------------------------------------------------------------------------
+-- Description : This circuit/VHDL compares two binary number of 3-bits
+--
+--------------------------------------------------------------------------------
+
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+
+ENTITY bincomparison IS
+  PORT (
+  ------------------------------------------------------------------------------
+    A1 		: IN  std_logic;
+    B1 		: IN  std_logic;
+    C1 		: IN  std_logic;
+    
+    A2 		: IN  std_logic;
+    B2 		: IN  std_logic;
+    C2 		: IN  std_logic;
+
+    OFINAL	: OUT STD_LOGIC
+    );
+END bincomparison;
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+
+ARCHITECTURE TypeArchitecture OF bincomparison IS
+
+BEGIN
+
+	OFINAL <= (A1 XNOR A2) AND (B1 XNOR B2) AND (C1 XNOR C2);
+
+
+
+	
+END TypeArchitecture;
